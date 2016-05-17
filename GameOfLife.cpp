@@ -64,11 +64,11 @@ GameOfLife::GameOfLife ( int w, int h ) : m_w ( w ), m_h ( h )
         lattice[i][j] = false;
       }
 
-  glider ( lattice, 2*m_w/5, 2*m_h/5 );
+  /*glider ( lattice, 2*m_w/5, 2*m_h/5 );
   glider ( lattice, 3*m_w/5, 3*m_h/5 );
   glider ( lattice, 4*m_w/5, 4*m_h/5 );
   glider ( lattice, 4*m_w/5, 2*m_h/5 );
-  glider ( lattice, 2*m_w/5, 4*m_h/5 );
+  glider ( lattice, 2*m_w/5, 4*m_h/5 );*/
 
 }
 
@@ -174,6 +174,15 @@ void GameOfLife::development()
             }
         }
     }
+  
+  nextLattice[m_h/2][m_w/2] = true;
+  nextLattice[m_h/2][m_w/2+3] = true;
+  nextLattice[m_h/2-1][m_w/2] = true;
+  nextLattice[m_h/2-1][m_w/2+3] = true;
+  nextLattice[m_h/2-3][m_w/2] = true;
+  nextLattice[m_h/2-3][m_w/2+1] = true;
+  nextLattice[m_h/2-3][m_w/2+2] = true;
+  nextLattice[m_h/2-3][m_w/2+3] = true;
   //latticeIndex = ( latticeIndex+1 ) %2;
 }
 
